@@ -1,0 +1,116 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        button{
+            cursor: pointer;
+            margin: 2;
+            height: 50px;
+            font-size: 15px
+        }
+    
+    </style>
+</head>
+
+
+<body>
+
+
+    <div style="display: inline-block; position: relative">
+
+        <div id="contentDiv" 
+            style="background-color: black; 
+            top: 10px;
+            left: 50px;
+            position: absolute;
+            opacity: 0;
+            pointer-events: none">
+
+            <iframe
+                id="externalContent" 
+                src="" 
+                name="targetFrame" 
+                allowTransparency="true" 
+                scrolling="yes" 
+                frameborder="1"
+                style= "height: 500px;
+                    width: 900px; 
+                    overflow: auto;">
+
+            </iframe>
+
+
+        </div>
+
+
+        <canvas></canvas>
+
+        <div id="npcDialogueBox"
+            style="position: absolute;
+            background-color: white;
+            border: 5px rgb(188, 71, 199) ridge;
+            height: 250px;
+            left: 100px;
+            right: 100px;
+            pointer-events: none;
+            opacity: 0;">
+
+
+
+            <div 
+                style="position: absolute; 
+                display: flex;
+                width: 50%;
+                height: 100%;
+                align-items:center;
+                text-align: center;
+                font-size: 25px">
+
+                <p id="npcDialogue"> </p>
+
+            </div>
+            
+
+            <div id="playerDialogueSelectionBox"
+                style="display: grid;
+                float: right;
+                width: 49%;
+                align-items: center;
+                justify-content: space-around">
+                <button id="button1" onclick="processPlayerResponse(1)"> Option 1 </button>
+                <button id="button2" onclick="processPlayerResponse(2)"> Option 2 </button>
+                <button id="button3" onclick="processPlayerResponse(3)"> Option 3 </button>
+                <button id="button4" onclick="processPlayerResponse(4)"> Option 4 </button>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" 
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"></script>
+
+    
+    <script src="/js/classes/Boundary.js"></script>
+    <script src="/js/classes/Dialogue.js"></script>
+    <script src="/js/classes/Sprite.js"></script>
+    <script src="/js/Maps.js"></script>
+    <script src="/js/NPCs.js"></script>
+    <script src="/js/classes/Player.js"></script>
+    <script src="/js/classes/NavigableMap.js"></script>
+    
+    <script src="/index.js"></script>
+</body>
